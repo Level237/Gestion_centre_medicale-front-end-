@@ -252,12 +252,12 @@ export class ExampleDataSource extends DataSource<Patient> {
           .filter((patient: Patient) => {
             const searchStr = (
               patient.name +
-              patient.gender +
-              patient.address +
-              patient.date +
-              patient.bGroup +
-              patient.treatment +
-              patient.mobile
+              patient.sexe +
+              patient.adresse +
+              patient.created_at +
+              patient.groupe_sanguin +
+              patient.rhesus+
+              patient.number
             ).toLowerCase();
             return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
           });
@@ -289,17 +289,17 @@ export class ExampleDataSource extends DataSource<Patient> {
         case "name":
           [propertyA, propertyB] = [a.name, b.name];
           break;
-        case "gender":
-          [propertyA, propertyB] = [a.gender, b.gender];
+        case "sexe":
+          [propertyA, propertyB] = [a.sexe, b.sexe];
           break;
         case "date":
-          [propertyA, propertyB] = [a.date, b.date];
+          [propertyA, propertyB] = [a.created_at, b.created_at];
           break;
         case "address":
-          [propertyA, propertyB] = [a.address, b.address];
+          [propertyA, propertyB] = [a.adresse, b.adresse];
           break;
         case "mobile":
-          [propertyA, propertyB] = [a.mobile, b.mobile];
+          [propertyA, propertyB] = [a.number, b.number];
           break;
       }
       const valueA = isNaN(+propertyA) ? propertyA : +propertyA;

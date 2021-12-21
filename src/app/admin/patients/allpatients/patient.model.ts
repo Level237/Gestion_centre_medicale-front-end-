@@ -2,23 +2,33 @@ export class Patient {
   id: number;
   img: string;
   name: string;
-  gender: string;
-  bGroup: string;
-  date: string;
-  address: string;
-  mobile: string;
-  treatment: string;
+  sexe: string;
+  date_naissance:string;
+  age:string;
+  lieu_naissance:string;
+  groupe_sanguin: string;
+  rhesus:string;
+  ville:string;
+  quartier:string;
+  adresse:string;
+  number:string;
+  created_at:string;
   constructor(patient) {
     {
       this.id = patient.id || this.getRandomID();
       this.img = patient.avatar || "assets/images/user/user1.jpg";
       this.name = patient.name || "";
-      this.gender = patient.gender || "male";
-      this.bGroup = patient.email || "";
-      this.date = patient.date || "";
-      this.address = patient.address || "";
-      this.mobile = patient.mobile || "";
-      this.treatment = patient.treatment || "";
+      this.sexe = patient.sexe || "male";
+      this.date_naissance=patient.date_naissance || "";
+      this.age=patient.age || "";
+      this.lieu_naissance=patient.lieu_naissance || "";
+      this.groupe_sanguin=patient.groupe_sanguin  || "AB";
+      this.rhesus=patient.rhesus || "Positif";
+      this.ville=patient.ville || "douala";
+      this.quartier=patient.quartier || "";
+      this.adresse=patient.adresse || "";
+      this.number=patient.number    || "";
+      this.created_at=patient.created_at;
     }
   }
   public getRandomID(): string {
