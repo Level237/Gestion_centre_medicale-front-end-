@@ -254,7 +254,7 @@ export class ExampleDataSource extends DataSource<Patient> {
               patient.name +
               patient.sexe +
               patient.adresse +
-              patient.created_at +
+              patient.date_naissance +
               patient.groupe_sanguin +
               patient.rhesus+
               patient.number
@@ -292,13 +292,13 @@ export class ExampleDataSource extends DataSource<Patient> {
         case "sexe":
           [propertyA, propertyB] = [a.sexe, b.sexe];
           break;
-        case "date":
-          [propertyA, propertyB] = [a.created_at, b.created_at];
+        case "date_naissance":
+          [propertyA, propertyB] = [a.date_naissance, b.date_naissance];
           break;
         case "address":
           [propertyA, propertyB] = [a.adresse, b.adresse];
           break;
-        case "mobile":
+        case "number":
           [propertyA, propertyB] = [a.number, b.number];
           break;
       }

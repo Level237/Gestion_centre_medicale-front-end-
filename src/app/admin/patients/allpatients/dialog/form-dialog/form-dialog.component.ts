@@ -52,12 +52,12 @@ export class FormDialogComponent {
       id: [this.patient.id],
       img: [this.patient.img],
       name: [this.patient.name],
-      gender: [this.patient.gender],
-      date: [this.patient.date],
-      bGroup: [this.patient.bGroup],
-      mobile: [this.patient.mobile],
-      address: [this.patient.address],
-      treatment: [this.patient.treatment],
+      gender: [this.patient.sexe],
+      date: [this.patient.date_naissance],
+      bGroup: [this.patient.groupe_sanguin],
+      mobile: [this.patient.number],
+      address: [this.patient.adresse],
+      
     });
   }
   submit() {

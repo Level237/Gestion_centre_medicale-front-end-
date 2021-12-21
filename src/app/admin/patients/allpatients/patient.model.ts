@@ -16,7 +16,7 @@ export class Patient {
   constructor(patient) {
     {
       this.id = patient.id || this.getRandomID();
-      this.img = patient.avatar || "assets/images/user/user1.jpg";
+      this.img = patient.avatar || "assets/images/user/user2.jpg";
       this.name = patient.name || "";
       this.sexe = patient.sexe || "male";
       this.date_naissance=patient.date_naissance || "";

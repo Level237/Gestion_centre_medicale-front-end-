@@ -5,7 +5,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { UnsubscribeOnDestroyAdapter } from "src/app/shared/UnsubscribeOnDestroyAdapter";
 @Injectable()
 export class PatientService extends UnsubscribeOnDestroyAdapter {
-  private readonly API_URL = "http://backend.test:8080/api/Patient";
+  private readonly API_URL = "http://backend.test:8080/api/";
   isTblLoading = true;
   dataChange: BehaviorSubject<Patient[]> = new BehaviorSubject<Patient[]>([]);
   // Temporarily stores data from dialogs
@@ -21,7 +21,7 @@ export class PatientService extends UnsubscribeOnDestroyAdapter {
   }
   /** CRUD METHODS */
   getAllPatients(): void {
-    this.subs.sink = this.httpClient.get<Patient[]>(this.API_URL).subscribe(
+    this.subs.sink = this.httpClient.get<Patient[]>(this.API_URL+'Patient').subscribe(
       (data) => {
         this.isTblLoading = false;
         this.dataChange.next(data);
