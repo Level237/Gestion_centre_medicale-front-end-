@@ -50,14 +50,13 @@ export class FormDialogComponent {
   createContactForm(): FormGroup {
     return this.fb.group({
       id: [this.patient.id],
-      img: [this.patient.img],
       name: [this.patient.name],
-      gender: [this.patient.sexe],
-      date: [this.patient.date_naissance],
-      bGroup: [this.patient.groupe_sanguin],
-      mobile: [this.patient.number],
-      address: [this.patient.adresse],
-      
+      sexe: [this.patient.sexe],
+      date_naissance: [this.patient.date_naissance],
+      groupe_sanguin: [this.patient.groupe_sanguin],
+      number: [this.patient.number],
+      adresse: [this.patient.adresse],
+
     });
   }
   submit() {

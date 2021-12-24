@@ -51,16 +51,14 @@ export class FormDialogComponent {
     return this.fb.group({
       id: [this.doctors.id],
       img: [this.doctors.img],
-      name: [this.doctors.name],
+      name: [this.doctors.nom],
       email: [this.doctors.email],
-      date: [
-        formatDate(this.doctors.date, "yyyy-MM-dd", "en"),
-        [Validators.required],
-      ],
-      specialization: [this.doctors.specialization],
-      mobile: [this.doctors.mobile],
-      department: [this.doctors.department],
-      degree: [this.doctors.degree],
+      // date: [
+      //   formatDate(this.doctors.date, "yyyy-MM-dd", "en"),
+      //   [Validators.required],
+      // ],
+      specialisation: [this.doctors.specialisation],
+      phone: [this.doctors.phone],
     });
   }
   submit() {

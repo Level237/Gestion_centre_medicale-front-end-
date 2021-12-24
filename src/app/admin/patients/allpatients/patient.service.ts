@@ -35,12 +35,12 @@ export class PatientService extends UnsubscribeOnDestroyAdapter {
   addPatient(patient: Patient): void {
     this.dialogData = patient;
 
-    /*  this.httpClient.post(this.API_URL, patient).subscribe(data => {
+     this.httpClient.post(this.API_URL, patient).subscribe(data => {
       this.dialogData = patient;
       },
       (err: HttpErrorResponse) => {
      // error code here
-    });*/
+    });
   }
   updatePatient(patient: Patient): void {
     this.dialogData = patient;

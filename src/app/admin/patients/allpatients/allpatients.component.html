@@ -86,45 +86,47 @@
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
                   <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="img">
+                 <ng-container matColumnDef="img">
                   <mat-header-cell mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-5'"> Image
                   </mat-header-cell>
                   <mat-cell mat-cell *matCellDef="let row" class="table-img tbl-col-width-per-5"> <img
                       src="assets/images/user/user2.jpg" />
                   </mat-cell>
-                </ng-container>
+                </ng-container> 
+                <button class="btn btn-primary">Viez</button>
                 <ng-container matColumnDef="name">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.name}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="gender">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-8'">Gender
+                <ng-container matColumnDef="sexe">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-8'">sexe
                   </mat-header-cell>
                   <mat-cell *matCellDef="let row" [ngClass]="'tbl-col-width-per-8'"> {{row.sexe}}
                   </mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="address">
+                <ng-container matColumnDef="adresse">
                   <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-15'">Address
                   </mat-header-cell>
                   <mat-cell *matCellDef="let row" [ngClass]="'tbl-col-width-per-20'"> {{row.adresse}}
                   </mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="mobile">
+                <ng-container matColumnDef="number">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.number}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="date">
+                <ng-container matColumnDef="date_naissance">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Birth Date</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.date_naissance | date: 'MM/dd/yyyy'}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="bGroup">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Blood Group</mat-header-cell>
+                <ng-container matColumnDef="groupe_sanguin">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Groupe Sanguin</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.groupe_sanguin}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="treatment">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Treatment</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.rhesus}}</mat-cell>
+                <ng-container matColumnDef="created_at">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>created_at</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.created_at}}</mat-cell>
                 </ng-container>
+
                 <!-- actions -->
                 <ng-container matColumnDef="actions">
                   <mat-header-cell *matHeaderCellDef class="pr-0">Actions</mat-header-cell>
@@ -136,6 +138,10 @@
                     <button mat-icon-button color="accent" class="btn-tbl-delete" (click)="$event.stopPropagation()"
                       (click)="deleteItem(i, row)">
                       <mat-icon aria-label="Delete" class="col-white">delete</mat-icon>
+                    </button>
+                    <button mat-icon-button color="accent" class="btn-tbl-view" (click)="$event.stopPropagation()"
+                      (click)="editCall(row)">
+                      <mat-icon aria-label="Edit" class="col-white">edit</mat-icon>
                     </button>
                   </mat-cell>
                 </ng-container>

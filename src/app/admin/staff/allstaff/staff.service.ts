@@ -5,7 +5,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { UnsubscribeOnDestroyAdapter } from "src/app/shared/UnsubscribeOnDestroyAdapter";
 @Injectable()
 export class StaffService extends UnsubscribeOnDestroyAdapter {
-  private readonly API_URL = "assets/data/staff.json";
+  private readonly API_URL = "http://backend.test:8080/api/";
   isTblLoading = true;
   dataChange: BehaviorSubject<Staff[]> = new BehaviorSubject<Staff[]>([]);
   // Temporarily stores data from dialogs
@@ -21,7 +21,7 @@ export class StaffService extends UnsubscribeOnDestroyAdapter {
   }
   /** CRUD METHODS */
   getAllStaffs(): void {
-    this.subs.sink = this.httpClient.get<Staff[]>(this.API_URL).subscribe(
+    this.subs.sink = this.httpClient.get<Staff[]>(this.API_URL+'Personnel').subscribe(
       (data) => {
         this.isTblLoading = false;
         this.dataChange.next(data);

@@ -27,12 +27,12 @@ export class AllpatientsComponent
     "select",
     "img",
     "name",
-    "gender",
-    "address",
-    "mobile",
-    "date",
-    "bGroup",
-    "treatment",
+    "sexe",
+    "adresse",
+    "number",
+    "date_naissance",
+    "groupe_sanguin",
+    "created_at",
     "actions",
   ];
   exampleDatabase: PatientService | null;
@@ -252,12 +252,14 @@ export class ExampleDataSource extends DataSource<Patient> {
           .filter((patient: Patient) => {
             const searchStr = (
               patient.name +
+              patient.email+
               patient.sexe +
               patient.adresse +
               patient.date_naissance +
               patient.groupe_sanguin +
               patient.rhesus+
-              patient.number
+              patient.number+
+              patient.created_at
             ).toLowerCase();
             return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
           });

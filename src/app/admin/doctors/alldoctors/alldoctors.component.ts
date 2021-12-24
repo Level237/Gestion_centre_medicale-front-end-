@@ -25,13 +25,11 @@ export class AlldoctorsComponent
   displayedColumns = [
     "select",
     "img",
-    "name",
-    "department",
-    "specialization",
-    "degree",
-    "mobile",
+    "nom",
+    "specialisation",
+    "adresse",
+    "phone",
     "email",
-    "date",
     "actions",
   ];
   exampleDatabase: DoctorsService | null;
@@ -251,12 +249,12 @@ export class ExampleDataSource extends DataSource<Doctors> {
           .slice()
           .filter((doctors: Doctors) => {
             const searchStr = (
-              doctors.name +
-              doctors.department +
-              doctors.specialization +
-              doctors.degree +
+              doctors.nom +
+              doctors.specialisation +
+              doctors.adresse+
+              doctors.statut+
               doctors.email +
-              doctors.mobile
+              doctors.phone
             ).toLowerCase();
             return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
           });
@@ -285,20 +283,18 @@ export class ExampleDataSource extends DataSource<Doctors> {
         case "id":
           [propertyA, propertyB] = [a.id, b.id];
           break;
-        case "name":
-          [propertyA, propertyB] = [a.name, b.name];
+        case "nom":
+          [propertyA, propertyB] = [a.nom, b.nom];
           break;
         case "email":
           [propertyA, propertyB] = [a.email, b.email];
           break;
-        case "date":
-          [propertyA, propertyB] = [a.date, b.date];
-          break;
-        case "time":
-          [propertyA, propertyB] = [a.department, b.department];
-          break;
-        case "mobile":
-          [propertyA, propertyB] = [a.mobile, b.mobile];
+        // case "date":
+        //   [propertyA, propertyB] = [a.date, b.date];
+        //   break;
+        
+        case "phone":
+          [propertyA, propertyB] = [a.phone, b.phone];
           break;
       }
       const valueA = isNaN(+propertyA) ? propertyA : +propertyA;

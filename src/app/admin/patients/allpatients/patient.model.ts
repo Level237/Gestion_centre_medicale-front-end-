@@ -2,9 +2,10 @@ export class Patient {
   id: number;
   img: string;
   name: string;
+  lastname:string;
+  email:string;
   sexe: string;
   date_naissance:string;
-  age:string;
   lieu_naissance:string;
   groupe_sanguin: string;
   rhesus:string;
@@ -18,9 +19,11 @@ export class Patient {
       this.id = patient.id || this.getRandomID();
       this.img = patient.avatar || "assets/images/user/user2.jpg";
       this.name = patient.name || "";
+      this.lastname=patient.lastname || "";
+      this.email=patient.email || "";
+
       this.sexe = patient.sexe || "male";
       this.date_naissance=patient.date_naissance || "";
-      this.age=patient.age || "";
       this.lieu_naissance=patient.lieu_naissance || "";
       this.groupe_sanguin=patient.groupe_sanguin  || "AB";
       this.rhesus=patient.rhesus || "Positif";
