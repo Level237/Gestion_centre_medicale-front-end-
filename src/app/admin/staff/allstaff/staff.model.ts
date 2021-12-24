@@ -2,22 +2,38 @@ import { formatDate } from "@angular/common";
 export class Staff {
   id: number;
   img: string;
-  name: string;
-  email: string;
-  date: string;
-  address: string;
-  mobile: string;
-  designation: string;
+  nom: string;
+  prenom:string;
+  email:string;
+  role:string;
+  date_naissance:string;
+  lieu_naissance:string;
+  situation_matrimoniale:string;
+  quartier:string;
+  adresse:string;
+  nombre_enfant:number;
+  statut:string;
+  specialisation;
+  phone: string;
+  age:string;
   constructor(staff) {
     {
       this.id = staff.id || this.getRandomID();
       this.img = staff.avatar || "assets/images/user/user1.jpg";
-      this.name = staff.name || "";
-      this.designation = staff.designation || "";
+      this.nom =staff.nom || "";
+      this.prenom=staff.prenom || "";
       this.email = staff.email || "";
-      this.date = formatDate(new Date(), "yyyy-MM-dd", "en") || "";
-      this.address = staff.address || "";
-      this.mobile = staff.mobile || "";
+      this.role=staff.role     || "docteur";
+      this.date_naissance =staff.date_naissance || "";
+      this.lieu_naissance=staff.lieu_naissance || "";
+      this.situation_matrimoniale=staf.situation_matrimoniale || "celibataire";
+      this.quartier=staff.quartier  || "";
+      this.adresse=staff.adresse  || "";
+      this.nombre_enfant=staff.nombre_enfant || "";
+      this.statut =staff.statut  || "";
+      this.phone=staff.phone || "";
+      this.age=staff.age || "";
+      this.specialisation=staff.specialisation || "";
     }
   }
   public getRandomID(): string {
