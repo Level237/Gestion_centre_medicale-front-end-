@@ -50,12 +50,10 @@ export class FormDialogComponent {
     return this.fb.group({
       id: [this.room.id],
       img: [this.room.img],
-      pName: [this.room.pName],
-      rType: [this.room.rType],
-      admitDate: [this.room.admitDate],
-      dischargeDate: [this.room.dischargeDate],
-      rNo: [this.room.rNo],
-      sex: [this.room.sex],
+      name: [this.room.name],
+      type: [this.room.type],
+      description: [this.room.description],
+      statut: [this.room.statut],
     });
   }
   submit() {

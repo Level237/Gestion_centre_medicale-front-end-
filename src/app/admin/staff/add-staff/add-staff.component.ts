@@ -11,22 +11,19 @@ export class AddStaffComponent {
   agree3 = false;
   constructor(private fb: FormBuilder) {
     this.staffForm = this.fb.group({
-      first: ["", [Validators.required, Validators.pattern("[a-zA-Z]+")]],
+      nom: ["", [Validators.required, Validators.pattern("[a-zA-Z]+")]],
       last: [""],
-      gender: ["", [Validators.required]],
-      mobile: ["", [Validators.required]],
-      password: ["", [Validators.required]],
-      conformPassword: ["", [Validators.required]],
-      designation: [""],
-      department: [""],
-      address: [""],
+     role: ["", [Validators.required]],
+      phone: ["", [Validators.required]],
+      lieu_naissance: ["",[Validators.required]],
+      situation_matrimoniale: ["",[Validators.required]],
+      date_naissance: ["",[Validators.required]],
       email: [
         "",
         [Validators.required, Validators.email, Validators.minLength(5)],
       ],
-      dob: ["", [Validators.required]],
-      education: [""],
-      uploadImg: [""],
+      nombre_enfant: [""],
+      specialisation: [""],
     });
   }
   onSubmit() {

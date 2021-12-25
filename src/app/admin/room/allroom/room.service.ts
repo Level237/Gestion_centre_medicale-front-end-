@@ -5,7 +5,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { UnsubscribeOnDestroyAdapter } from "src/app/shared/UnsubscribeOnDestroyAdapter";
 @Injectable()
 export class RoomService extends UnsubscribeOnDestroyAdapter {
-  private readonly API_URL = "assets/data/rooms.json";
+  private readonly API_URL = "http://backend.test:8080/api/";
   isTblLoading = true;
   dataChange: BehaviorSubject<Room[]> = new BehaviorSubject<Room[]>([]);
   // Temporarily stores data from dialogs
@@ -21,7 +21,7 @@ export class RoomService extends UnsubscribeOnDestroyAdapter {
   }
   /** CRUD METHODS */
   getAllRooms(): void {
-    this.subs.sink = this.httpClient.get<Room[]>(this.API_URL).subscribe(
+    this.subs.sink = this.httpClient.get<Room[]>(this.API_URL+"room").subscribe(
       (data) => {
         this.isTblLoading = false;
         this.dataChange.next(data);

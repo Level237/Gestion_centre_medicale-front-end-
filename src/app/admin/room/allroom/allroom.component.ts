@@ -26,13 +26,11 @@ export class AllroomComponent
   displayedColumns = [
     "select",
     "img",
-    "rNo",
-    "pName",
-    "rType",
-    "sex",
-    "admitDate",
-    "dischargeDate",
-    "actions",
+    "name",
+    "type",
+    "description",
+    "statut",
+    "actions"
   ];
   exampleDatabase: RoomService | null;
   dataSource: ExampleDataSource | null;
@@ -250,12 +248,10 @@ export class ExampleDataSource extends DataSource<Room> {
           .slice()
           .filter((room: Room) => {
             const searchStr = (
-              room.rNo +
-              room.pName +
-              room.rType +
-              room.sex +
-              room.admitDate +
-              room.dischargeDate
+              room.name +
+              room.type +
+              room.description +
+              room.statut 
             ).toLowerCase();
             return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
           });
@@ -284,20 +280,17 @@ export class ExampleDataSource extends DataSource<Room> {
         case "id":
           [propertyA, propertyB] = [a.id, b.id];
           break;
-        case "pName":
-          [propertyA, propertyB] = [a.pName, b.pName];
+        case "name":
+          [propertyA, propertyB] = [a.name, b.name];
           break;
-        case "rType":
-          [propertyA, propertyB] = [a.rType, b.rType];
+        case "type":
+          [propertyA, propertyB] = [a.type, b.type];
           break;
-        case "admitDate":
-          [propertyA, propertyB] = [a.admitDate, b.admitDate];
+        case "description":
+          [propertyA, propertyB] = [a.description, b.description];
           break;
-        case "dischargeDate":
-          [propertyA, propertyB] = [a.dischargeDate, b.dischargeDate];
-          break;
-        case "rNo":
-          [propertyA, propertyB] = [a.rNo, b.rNo];
+        case "statut":
+          [propertyA, propertyB] = [a.statut, b.statut];
           break;
       }
       const valueA = isNaN(+propertyA) ? propertyA : +propertyA;

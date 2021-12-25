@@ -2,22 +2,18 @@ import { formatDate } from "@angular/common";
 export class Room {
   id: number;
   img: string;
-  pName: string;
-  rNo: string;
-  rType: string;
-  sex: string;
-  admitDate: string;
-  dischargeDate: string;
+  name: string;
+  type: string;
+  description: string;
+  statut: string;
   constructor(room) {
     {
       this.id = room.id || this.getRandomID();
       this.img = room.avatar || "assets/images/user/user1.jpg";
-      this.pName = room.pName || "";
-      this.rNo = room.rNo || "";
-      this.rType = room.rType || "";
-      this.sex = room.sex || "";
-      this.admitDate = formatDate(new Date(), "yyyy-MM-dd", "en") || "";
-      this.dischargeDate = formatDate(new Date(), "yyyy-MM-dd", "en") || "";
+      this.name = room.name || "";
+      this.type = room.type || "";
+      this.description = room.description || "";
+      this.statut = room.statut || "";
     }
   }
   public getRandomID(): string {

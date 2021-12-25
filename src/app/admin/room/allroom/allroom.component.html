@@ -93,32 +93,25 @@
                       [src]="row.img" />
                   </mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="rNo">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Room No</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.rNo}}</mat-cell>
+                <ng-container matColumnDef="name">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>name</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.name}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="pName">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>patient Name</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.pName}}</mat-cell>
+                <ng-container matColumnDef="type">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.type}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="rType">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Room Type</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.rType}}</mat-cell>
+                <ng-container matColumnDef="description">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.description}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="sex">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Sex</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.sex}}</mat-cell>
+                <ng-container matColumnDef="statut">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Statut</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.statut}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="admitDate">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Admit Date</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.admitDate | date: 'MM/dd/yyyy'}}
-                  </mat-cell>
-                </ng-container>
-                <ng-container matColumnDef="dischargeDate">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Discharge Date</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.dischargeDate | date: 'MM/dd/yyyy'}}
-                  </mat-cell>
-                </ng-container>
+                
+                
+                
                 <!-- actions -->
                 <ng-container matColumnDef="actions">
                   <mat-header-cell *matHeaderCellDef class="pr-0">Actions</mat-header-cell>

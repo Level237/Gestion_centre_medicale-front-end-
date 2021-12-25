@@ -9,11 +9,10 @@ export class AddAllotmentComponent {
   roomForm: FormGroup;
   constructor(private fb: FormBuilder) {
     this.roomForm = this.fb.group({
-      rNo: ["", [Validators.required]],
-      rType: ["", [Validators.required]],
-      pName: ["", [Validators.required]],
-      aDate: ["", [Validators.required]],
-      dDate: ["", [Validators.required]],
+      name: ["", [Validators.required]],
+      type: ["", [Validators.required]],
+      description: ["", [Validators.required]],
+     statut: ["", [Validators.required]],
     });
   }
   onSubmit() {
