@@ -1,7 +1,7 @@
 import { formatDate } from "@angular/common";
 export class Staff {
   id: number;
-  img: string;
+  
   nom: string;
   prenom:string;
   email:string;
@@ -15,25 +15,23 @@ export class Staff {
   statut:string;
   specialisation;
   phone: string;
-  age:string;
-  constructor(staff) {
+  
+  constructor(Personnel) {
     {
-      this.id = staff.id || this.getRandomID();
-      this.img = staff.avatar || "assets/images/user/user1.jpg";
-      this.nom =staff.nom || "";
-      this.prenom=staff.prenom || "";
-      this.email = staff.email || "";
-      this.role=staff.role     || "docteur";
-      this.date_naissance =staff.date_naissance || "";
-      this.lieu_naissance=staff.lieu_naissance || "";
-      this.situation_matrimoniale=staf.situation_matrimoniale || "celibataire";
-      this.quartier=staff.quartier  || "";
-      this.adresse=staff.adresse  || "";
-      this.nombre_enfant=staff.nombre_enfant || "";
-      this.statut =staff.statut  || "";
-      this.phone=staff.phone || "";
-      this.age=staff.age || "";
-      this.specialisation=staff.specialisation || "";
+      this.id = Personnel.id || this.getRandomID();
+      this.nom =Personnel.nom || "";
+      this.prenom=Personnel.prenom || "";
+      this.email = Personnel.email || "";
+      this.role=Personnel.role     || "docteur";
+      this.date_naissance =Personnel.date_naissance || "";
+      this.lieu_naissance=Personnel.lieu_naissance || "";
+      this.situation_matrimoniale=Personnel.situation_matrimoniale || "celibataire";
+      this.quartier=Personnel.quartier  || "";
+      this.adresse=Personnel.adresse  || "";
+      this.nombre_enfant=Personnel.nombre_enfant || "";
+      this.statut =Personnel.statut  || "";
+      this.phone=Personnel.phone || "";
+      this.specialisation=Personnel.specialisation || "";
     }
   }
   public getRandomID(): string {

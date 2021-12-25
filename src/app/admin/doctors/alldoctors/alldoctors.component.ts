@@ -292,7 +292,7 @@ export class ExampleDataSource extends DataSource<Doctors> {
         // case "date":
         //   [propertyA, propertyB] = [a.date, b.date];
         //   break;
-        
+
         case "phone":
           [propertyA, propertyB] = [a.phone, b.phone];
           break;

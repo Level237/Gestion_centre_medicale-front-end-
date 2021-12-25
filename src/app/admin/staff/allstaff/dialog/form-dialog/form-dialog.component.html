@@ -2,7 +2,6 @@
   <div class="modalHeader">
     <div class="editRowModal">
       <div class="modalHeader clearfix">
-        <img [src]='staff.img' alt="avatar">
         <div class="modal-about">
           <div class="font-weight-bold p-t-5 msl-3 font-17">
             {{dialogTitle}}</div>
@@ -19,19 +18,19 @@
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Name</mat-label>
-            <input matInput formControlName="name" required>
+            <input matInput formControlName="nom" required>
             <mat-icon matSuffix>face</mat-icon>
-            <mat-error *ngIf="staffForm.get('name').hasError('required')">
+            <mat-error *ngIf="staffForm.get('nom').hasError('required')">
               Name is required
             </mat-error>
           </mat-form-field>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
           <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Designation</mat-label>
+            <mat-label>specialisation</mat-label>
             <input matInput formControlName="designation" required>
             <mat-icon matSuffix>business_center</mat-icon>
-            <mat-error *ngIf="staffForm.get('designation').hasError('required')">
+            <mat-error *ngIf="staffForm.get('specialisation').hasError('required')">
               Designation is required
             </mat-error>
           </mat-form-field>
@@ -41,9 +40,9 @@
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Mobile</mat-label>
-            <input matInput formControlName="mobile" type="number">
+            <input matInput formControlName="phone" type="number">
             <mat-icon matSuffix>phone</mat-icon>
-            <mat-error *ngIf="staffForm.get('mobile').hasError('required')">
+            <mat-error *ngIf="staffForm.get('phone').hasError('required')">
               Mobile is required
             </mat-error>
           </mat-form-field>
@@ -66,7 +65,7 @@
             <input matInput [matDatepicker]="picker" formControlName="date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-            <mat-error *ngIf="staffForm.get('date').hasError('required')">
+            <mat-error *ngIf="staffForm.get('date_naissance').hasError('required')">
               Please select date
             </mat-error>
           </mat-form-field>
@@ -76,7 +75,7 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Address</mat-label>
-            <textarea matInput formControlName="address"></textarea>
+            <textarea matInput formControlName="adresse"></textarea>
           </mat-form-field>
         </div>
       </div>

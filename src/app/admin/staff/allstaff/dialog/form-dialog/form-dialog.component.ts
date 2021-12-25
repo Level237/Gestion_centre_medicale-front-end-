@@ -50,16 +50,17 @@ export class FormDialogComponent {
   createContactForm(): FormGroup {
     return this.fb.group({
       id: [this.staff.id],
-      img: [this.staff.img],
-      name: [this.staff.name],
-      email: [this.staff.email],
-      date: [
-        formatDate(this.staff.date, "yyyy-MM-dd", "en"),
-        [Validators.required],
-      ],
-      designation: [this.staff.designation],
-      address: [this.staff.address],
-      mobile: [this.staff.mobile],
+      name: [this.staff.nom],
+      
+      date:[this.staff.email],
+      // date: [
+      //   formatDate(this.staff.date, "yyyy-MM-dd", "en"),
+      //   [Validators.required],
+      // ],
+      specialisation: [this.staff.specialisation],
+      adresse: [this.staff.adresse],
+      role: [this.staff.role],
+      phone: [this.staff.phone],
     });
   }
   submit() {
