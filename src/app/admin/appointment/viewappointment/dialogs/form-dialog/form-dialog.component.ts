@@ -52,22 +52,17 @@ export class FormDialogComponent {
   }
   createContactForm(): FormGroup {
     return this.fb.group({
-      id: [this.appointment.id],
-      img: [this.appointment.img],
-      name: [this.appointment.name, [Validators.required]],
-      email: [
-        this.appointment.email,
-        [Validators.required, Validators.email, Validators.minLength(5)],
-      ],
-      gender: [this.appointment.gender],
-      date: [
-        formatDate(this.appointment.date, "yyyy-MM-dd", "en"),
-        [Validators.required],
-      ],
-      time: [this.appointment.time, [Validators.required]],
-      mobile: [this.appointment.mobile, [Validators.required]],
-      doctor: [this.appointment.doctor, [Validators.required]],
-      injury: [this.appointment.injury],
+
+      personnel_id: [this.appointment.personnel_id, [Validators.required]],
+      personnel_name: [this.appointment.personnel_name, [Validators.required]],
+      patient_id: [this.appointment.patient_id, [Validators.required]],
+      // date: [
+      //   formatDate(this.appointment.date, "yyyy-MM-dd", "en"),
+      //   [Validators.required],
+      // ],
+      patient_name: [this.appointment.patient_name, [Validators.required]],
+      personnel_specialisation: [this.appointment.personnel_specialisation, [Validators.required]],
+      type:[this.appointment.type, [Validators.required]],
     });
   }
   submit() {

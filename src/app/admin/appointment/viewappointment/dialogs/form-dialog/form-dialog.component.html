@@ -18,43 +18,46 @@
       <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
           <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>name</mat-label>
-            <input matInput formControlName="name">
+            <mat-label>Patient_name</mat-label>
+            <input matInput formControlName="patient_name">
             <mat-icon matSuffix>face</mat-icon>
-            <mat-error *ngIf="appointmentForm.get('name').hasError('required')">
+            <mat-error *ngIf="appointmentForm.get('patient_name').hasError('required')">
               Name is required
             </mat-error>
           </mat-form-field>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
           <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput formControlName="email" required>
-            <mat-icon matSuffix>email</mat-icon>
+            <mat-label>patient_id</mat-label>
+            <input matInput formControlName="patient_id" required>
+
             <mat-error
-              *ngIf="appointmentForm.get('email').hasError('required') || appointmentForm.get('email').touched">
-              Please enter a valid email address
+              *ngIf="appointmentForm.get('patient_id').hasError('required')">
+             Id Patient is required
             </mat-error>
           </mat-form-field>
         </div>
       </div>
       <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
-          <div class="m-b-20">
-            <mat-label class="msr-3">Gender:</mat-label>
-            <mat-radio-group aria-label="Select gender" formControlName="gender" required>
-              <mat-radio-button value="male">Male</mat-radio-button>
-              <mat-radio-button value="female">Female</mat-radio-button>
-              <mat-error *ngIf="appointmentForm.get('gender').hasError('required')">
-                Select gender
-              </mat-error>
-            </mat-radio-group>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Personnel name</mat-label>
+            <input matInput formControlName="personnel_name">
+            <mat-icon matSuffix>face</mat-icon>
+            <mat-error *ngIf="appointmentForm.get('personnel_name').hasError('required')">
+              personnel Name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+
+
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
-          <mat-form-field class="example-full-width" appearance="outline">
+          {% comment %} <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Choose a date</mat-label>
             <input matInput [matDatepicker]="picker" formControlName="date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -62,17 +65,34 @@
             <mat-error *ngIf="appointmentForm.get('date').hasError('required')">
               Please select date
             </mat-error>
+          </mat-form-field> {% endcomment %}
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>personnel_id</mat-label>
+            <input matInput formControlName="patient_id" required>
+
+            <mat-error
+              *ngIf="appointmentForm.get('personnel_id').hasError('required')">
+             Id Personnel is required
+            </mat-error>
           </mat-form-field>
         </div>
         <div class=" col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
-          <mat-form-field class="example-full-width" appearance="outline">
+          {% comment %} <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Time</mat-label>
             <input matInput formControlName="time">
             <mat-icon matSuffix>access_time</mat-icon>
             <mat-error *ngIf="appointmentForm.get('time').hasError('required')">
               Please select time
             </mat-error>
-          </mat-form-field>
+          </mat-form-field> {% endcomment %}
+          <mat-label class="msr-3">Gender:</mat-label>
+            <mat-radio-group aria-label="Select gender" formControlName="gender" required>
+              <mat-radio-button value="male">Male</mat-radio-button>
+              <mat-radio-button value="female">Female</mat-radio-button>
+              <mat-error *ngIf="appointmentForm.get('gender').hasError('required')">
+                Select gender
+              </mat-error>
+            </mat-radio-group>
         </div>
       </div>
       <div class="row">

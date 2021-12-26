@@ -27,15 +27,13 @@ export class ViewappointmentComponent
 {
   displayedColumns = [
     "select",
-    "img",
-    "name",
-    "email",
-    "gender",
-    "date",
-    "time",
-    "mobile",
-    "doctor",
-    "injury",
+    "id",
+    "personnel_id",
+    "personnel_name",
+    "patient_id",
+    "patient_name",
+    "personnel_specialisation",
+    "type",
     "actions",
   ];
   exampleDatabase: AppointmentService | null;
@@ -254,13 +252,13 @@ export class ExampleDataSource extends DataSource<Appointment> {
           .slice()
           .filter((appointment: Appointment) => {
             const searchStr = (
-              appointment.name +
-              appointment.email +
-              appointment.gender +
-              appointment.date +
-              appointment.doctor +
-              appointment.injury +
-              appointment.mobile
+              appointment.id +
+              appointment.personnel_id +
+              appointment.personnel_name +
+              appointment.patient_id+
+              appointment.patient_name +
+              appointment.personnel_specialisation
+
             ).toLowerCase();
             return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
           });
@@ -289,18 +287,21 @@ export class ExampleDataSource extends DataSource<Appointment> {
         case "id":
           [propertyA, propertyB] = [a.id, b.id];
           break;
-        case "name":
-          [propertyA, propertyB] = [a.name, b.name];
+        case "personnel_id":
+          [propertyA, propertyB] = [a.personnel_id, b.personnel_id];
           break;
-        case "email":
-          [propertyA, propertyB] = [a.email, b.email];
+        case "personnel_name":
+          [propertyA, propertyB] = [a.personnel_name, b.personnel_name];
           break;
         // case 'date': [propertyA, propertyB] = [a.date, b.date]; break;
-        case "time":
-          [propertyA, propertyB] = [a.time, b.time];
+        case "patient_id":
+          [propertyA, propertyB] = [a.patient_id, b.patient_id];
           break;
-        case "mobile":
-          [propertyA, propertyB] = [a.mobile, b.mobile];
+        case "patient_name":
+          [propertyA, propertyB] = [a.patient_name, b.patient_name];
+          break;
+          case "personnel_specialisation":
+          [propertyA, propertyB] = [a.patient_name, b.patient_name];
           break;
       }
       const valueA = isNaN(+propertyA) ? propertyA : +propertyA;

@@ -3,13 +3,18 @@ import { BehaviorSubject } from "rxjs";
 import { Appointment } from "./appointment.model";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { UnsubscribeOnDestroyAdapter } from "src/app/shared/UnsubscribeOnDestroyAdapter";
+import { Doctors } from "../../doctors/alldoctors/doctors.model";
 @Injectable()
 export class AppointmentService extends UnsubscribeOnDestroyAdapter {
-  private readonly API_URL = "assets/data/appointment.json";
+  private readonly API_URL = "http://backend.test:8080/api/";
   isTblLoading = true;
+
   dataChange: BehaviorSubject<Appointment[]> = new BehaviorSubject<
     Appointment[]
   >([]);
+  dataChange1: BehaviorSubject<Doctors[]> = new BehaviorSubject<
+  Doctors[]
+>([]);
   // Temporarily stores data from dialogs
   dialogData: any;
   constructor(private httpClient: HttpClient) {
@@ -23,7 +28,7 @@ export class AppointmentService extends UnsubscribeOnDestroyAdapter {
   }
   /** CRUD METHODS */
   getAllAppointments(): void {
-    this.subs.sink = this.httpClient.get<Appointment[]>(this.API_URL).subscribe(
+    this.subs.sink = this.httpClient.get<Appointment[]>(this.API_URL+'appointment').subscribe(
       (data) => {
         this.isTblLoading = false;
         this.dataChange.next(data);
