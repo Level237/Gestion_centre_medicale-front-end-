@@ -1,27 +1,23 @@
 import { formatDate } from "@angular/common";
 export class Appointment {
   id: number;
-  img: string;
-  name: string;
-  email: string;
-  gender: string;
-  date: string;
-  time: string;
-  mobile: string;
-  doctor: string;
-  injury: string;
+  personnel_id:number;
+  personnel_name:string;
+  patient_id:number;
+  patient_name:string;
+  personnel_specialisation:string;
+  type:string;
+
   constructor(appointment) {
     {
       this.id = appointment.id || this.getRandomID();
-      this.img = appointment.avatar || "assets/images/user/user1.jpg";
-      this.name = appointment.name || "";
-      this.email = appointment.email || "";
-      this.gender = appointment.gender || "male";
-      this.date = formatDate(new Date(), "yyyy-MM-dd", "en") || "";
-      this.time = appointment.time || "";
-      this.mobile = appointment.mobile || "";
-      this.doctor = appointment.mobile || "";
-      this.injury = appointment.mobile || "";
+      this.personnel_name= appointment.personnel_name || "";
+      this.personnel_specialisation = appointment.personnel_specialisation || "";
+      this.personnel_id = appointment.personnel_id || "";
+      this.patient_id = appointment.patient_id || "";
+      // this.date = formatDate(new Date(), "yyyy-MM-dd", "en") || "";
+      this.patient_name = appointment.patient_name || "";
+      this.type=appointment.type || "";
     }
   }
   public getRandomID(): string {
