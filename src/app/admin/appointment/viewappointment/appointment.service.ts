@@ -5,6 +5,10 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { UnsubscribeOnDestroyAdapter } from "src/app/shared/UnsubscribeOnDestroyAdapter";
 import { Doctors } from "../../doctors/alldoctors/doctors.model";
 @Injectable()
+
+export interface numberOfAppointment{
+  count:number;
+}
 export class AppointmentService extends UnsubscribeOnDestroyAdapter {
   private readonly API_URL = "http://backend.test:8080/api/";
   isTblLoading = true;
@@ -23,9 +27,27 @@ export class AppointmentService extends UnsubscribeOnDestroyAdapter {
   get data(): Appointment[] {
     return this.dataChange.value;
   }
+  get data_doctors():Doctors[]{
+    return this.dataChange1.value;
+  }
   getDialogData() {
     return this.dialogData;
   }
+
+  // // Method read the doctors
+
+  // getAllDoctors():void{
+  //   this.subs.sink = this.httpClient.get<Doctors[]>(this.API_URL+'doctors').subscribe(
+  //     (data_doctors) => {
+  //       this.isTblLoading = false;
+  //       this.dataChange1.next(data_doctors);
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       this.isTblLoading = false;
+  //       console.log(error.name + " " + error.message);
+  //     }
+  //   );
+  // }
   /** CRUD METHODS */
   getAllAppointments(): void {
     this.subs.sink = this.httpClient.get<Appointment[]>(this.API_URL+'appointment').subscribe(
@@ -38,6 +60,10 @@ export class AppointmentService extends UnsubscribeOnDestroyAdapter {
         console.log(error.name + " " + error.message);
       }
     );
+  }
+
+  getNumberAppointment(){
+   return this.httpClient.get<numberOfAppointment>(this.API_URL+'numberOfAppointment');
   }
   addAppointment(appointment: Appointment): void {
     this.dialogData = appointment;
@@ -71,4 +97,5 @@ export class AppointmentService extends UnsubscribeOnDestroyAdapter {
       }
     );*/
   }
+
 }

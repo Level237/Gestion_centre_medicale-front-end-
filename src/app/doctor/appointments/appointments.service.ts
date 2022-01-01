@@ -5,7 +5,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { UnsubscribeOnDestroyAdapter } from "src/app/shared/UnsubscribeOnDestroyAdapter";
 @Injectable()
 export class AppointmentsService extends UnsubscribeOnDestroyAdapter {
-  private readonly API_URL = "http://laravel8.test:8080/api/Appointment";
+  private readonly API_URL = "http://backend.test:8080/api/";
   isTblLoading = true;
   dataChange: BehaviorSubject<Appointments[]> = new BehaviorSubject<
     Appointments[]

@@ -10,6 +10,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { NgApexchartsModule } from "ng-apexcharts";
+import {AppointmentService} from "../../admin/appointment/viewappointment/appointment.service";
 
 @NgModule({
   declarations: [MainComponent, Dashboard2Component],
@@ -24,5 +25,6 @@ import { NgApexchartsModule } from "ng-apexcharts";
     MatMenuModule,
     MatTooltipModule,
   ],
+  providers: [AppointmentService],
 })
 export class DashboardModule {}
