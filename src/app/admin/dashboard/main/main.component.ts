@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+
 import {
   ChartComponent,
   ApexAxisChartSeries,
@@ -13,7 +14,6 @@ import {
   ApexFill,
   ApexResponsive,
 } from "ng-apexcharts";
-import { AppointmentService} from "../../appointment/viewappointment/appointment.service";
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
@@ -28,11 +28,15 @@ export type ChartOptions = {
   fill: ApexFill;
   colors: string[];
 };
+
+
 @Component({
   selector: "app-main",
   templateUrl: "./main.component.html",
   styleUrls: ["./main.component.scss"],
 })
+
+
 export class MainComponent implements OnInit {
   public cardChart1: any;
   public cardChart1Data: any;
@@ -52,7 +56,7 @@ export class MainComponent implements OnInit {
 
   public areaChartOptions: Partial<ChartOptions>;
   public barChartOptions: Partial<ChartOptions>;
-  constructor(public appointmentService:AppointmentService) {}
+  constructor() {}
   ngOnInit() {
     this.smallChart1();
     this.smallChart2();

@@ -4,11 +4,12 @@ import { Appointment } from "./appointment.model";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { UnsubscribeOnDestroyAdapter } from "src/app/shared/UnsubscribeOnDestroyAdapter";
 import { Doctors } from "../../doctors/alldoctors/doctors.model";
-@Injectable()
+
 
 export interface numberOfAppointment{
   count:number;
 }
+@Injectable()
 export class AppointmentService extends UnsubscribeOnDestroyAdapter {
   private readonly API_URL = "http://backend.test:8080/api/";
   isTblLoading = true;
